@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для введення інформації про товари</title>
+    <style>
+        /* Основні стилі */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans Unicode', Calibri, Arial, sans-serif;
+            background-color: #f0f8f5; /* Світло-зелений фон сторінки */
+            color: #333;
+        }
+
+        /* Навігаційна панель */
+        .navbar {
+            position: sticky; 
+            top: 0; 
+            padding: 15px;
+            background-color: #2e8b57; /* Темно-зелений */
+            z-index: 1000; 
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #3cb371; /* Світло-зелений при наведенні */
+        }
+
+        /* Контейнери */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #e0ffe0; /* Світло-зелений для контейнерів */
+            width: 80%;
+            max-width: 1200px;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стилі для форми */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #2e8b57;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3cb371;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навігаційна панель -->
+    <div class="navbar">
+        <a href="D:\lab1HTML\avtor.html">Про Автора</a>
+        <a href="D:\lab1HTML\holovna.html">Головна</a>
+        <a href="D:\lab1HTML\news.html">Новини</a>
+        <a href="D:\lab1HTML\info.html">Інформація</a>
+        <a href="#">Форма</a>
+    </div>
+
+    <!-- Заголовок сторінки -->
+    <div class="container">
+        <h2>Введіть інформацію про товар</h2>
+    </div>
+
+    <!-- Форма введення інформації про товар -->
+    <div class="container">
+        <form action="#" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="productForm">
+            <fieldset id="productInfo">
+                <legend>Дані про товар</legend>
+
+                <!-- Поле для введення назви товару -->
+                <label for="productName">Назва товару:</label>
+                <input type="text" id="productName" name="productName" required autofocus>
+
+                <!-- Поле для введення ціни -->
+                <label for="price">Ціна (грн):</label>
+                <input type="number" id="price" name="price" required min="1">
+
+                <!-- Поле для введення номера телефону -->
+                <label for="phone">Контактний телефон:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+380 ХХХ ХХХ ХХХ">
+
+                <!-- Поле для вибору файлу (зображення товару) -->
+                <label for="image">Зображення товару:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+
+                <!-- Поле для вибору кольору -->
+                <label for="color">Оберіть колір товару:</label>
+                <input type="color" id="color" name="color">
+
+                <!-- Поле для введення опису товару -->
+                <label for="description">Опис товару:</label>
+                <textarea id="description" name="description" rows="4" cols="50" maxlength="500" required></textarea>
+
+                <!-- Поле для вибору дати тижня -->
+                <label for="deliveryWeek">Дата доставки (тиждень):</label>
+                <input type="week" id="deliveryWeek" name="deliveryWeek" required>
+
+            </fieldset>
+
+            <!-- Кнопки відправки та скидання форми -->
+            <button type="submit" form="productForm" formmethod="POST">Відправити інформацію</button>
+            <button type="reset" form="productForm">Скинути</button>
+        </form>
+    </div>
+    
+</body>
+</html>

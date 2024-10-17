@@ -1,124 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Lab #1</title>
+    <title>Аптека "ЗАБАГАНКА"</title>
+    <style>
+        /* Основні стилі */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5; /* Світло-зелений фон сторінки */
+            color: #333;
+        }
+
+        /* Навігаційна панель */
+        .navbar {
+            position: sticky; 
+            top: 0; 
+            padding: 15px;
+            background-color: #2e8b57; /* Темно-зелений */
+            z-index: 1000; 
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #3cb371; /* Світло-зелений при наведенні */
+        }
+
+        /* Заголовок */
+        .header {
+            background-color: #32cd32; /* Яскраво-зелений */
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .header h2 {
+            margin-top: 10px;
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        /* Стиль для горизонтальних ліній */
+        hr {
+            width: 80%;
+            height: 4px;
+            background-color: #3cb371;
+            margin: 20px auto;
+            border: none;
+        }
+
+        /* Контейнери */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #e0ffe0; /* Світло-зелений для контейнерів */
+            width: 80%;
+            max-width: 1200px;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Таблиця ліків */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #2e8b57;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3cb371; /* Темно-зелений заголовок таблиці */
+            color: white;
+        }
+
+        td {
+            background-color: #f0f8f5; /* Світло-зелений фон для клітинок */
+        }
+
+        /* Стиль для секції "Про компанію" */
+        .about {
+            background-color: #fff;
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+    </style>
 </head>
-<body style="background: #e0f2e9; font-family: Arial, sans-serif; color: #333; margin: 0; padding: 0;">
-    <h1 id="green-element" title="Головна сторінка" style="text-align: center; color: #004d00; font-size: 30px; transition: transform 0.3s ease;" 
-        onmouseover="this.style.transform='translateY(-5px)';" 
-        onmouseout="this.style.transform='translateY(0)';">
-        Аптека "Забаганка"
-    </h1>
-    
-    <hr style="width: 100%; height: 5px; background-color: #006400; margin: 20px auto; border: none;">
-    
-    <h4 id="head-text" title="Інформаційний заголовок" style="background-color: #009900; color: #ffffff; font-size: 30px; margin: 0; padding: 10px; text-align: center; transition: transform 0.3s ease;" 
-        onmouseover="this.style.transform='translateY(-5px)';" 
-        onmouseout="this.style.transform='translateY(0)';">
-        Вітаємо!<br>Раді бачити Вас на нашому сайті!
-    </h4>
-    
-    <hr style="width: 100%; height: 5px; background-color: #006400; margin: 20px auto; border: none;">
-    
-    <div style="width: 70%; margin: 20px auto; padding: 20px; border: 1px solid #b3d9b3; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <h2 style="text-align: center;">
-            Аптека "Забаганка" – ваш надійний партнер у забезпеченні здоров’я та комфорту!<br>Розташована в зручному місці, наша аптека пропонує широкий асортимент лікарських засобів, вітамінів, медичних виробів та косметичних продуктів.<br>Ми дбаємо про кожного клієнта, забезпечуючи індивідуальний підхід і професійну консультацію.
-        </h2>
+<body>
+
+    <!-- Навігаційна панель -->
+    <div class="navbar">
+        <a href="D:\lab1HTML\probaproavtora.html">Про Автора</a>
+        <a href="#">Головна</a>
+        <a href="D:\lab1HTML\probanews.html">Новини</a>
+        <a href="D:\lab1HTML\probaspiski.html">Інформація</a>
+        <a href="D:\lab1HTML\forma.html">Форма</a>
     </div>
-    
-    <hr style="width: 100%; height: 5px; background-color: #006400; margin: 20px auto; border: none;">
-    
-    <div style="width: 70%; margin: 20px auto; padding: 20px; border: 1px solid #b3d9b3; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <h2 title="Спеціальні пропозиції" style="text-align: center;">
-            <span style="display: inline-block; transition: transform 0.3s ease;" 
-                  onmouseover="this.style.transform='translateY(-5px)';" 
-                  onmouseout="this.style.transform='translateY(0)';">
-                Лише на цьому сайті!<br>
-                <span style="color: #007f00;"><a href="file:///D:/lab1HTML/znizki.html" style="color: #007f00; text-decoration: none;">-Шалені знижки!</a></span><br>
-                <span style="color: #007f00;"><a href="Liki.html" style="color: #007f00; text-decoration: none;">-Ліки на замовлення!</a></span><br>
-                <span style="color: #007f00;"><a href="Akcii.html" style="color: #007f00; text-decoration: none;">-Конкурси та акції!</a></span><br>
-                <span style="color: #007f00;"><a href="file:///D:/lab1HTML/medcanab.html" style="color: #007f00; text-decoration: none;">-Медичний канабіс!</a></span>
-            </span>
-        </h2>
+
+    <!-- Заголовок -->
+    <div class="header">
+        <h1>АПТЕКА "ЗАБАГАНКА!"</h1>
+        <h2>Ваше здоров'я - наша турбота</h2>
     </div>
-    
-    <!-- Product Section -->
-    <div style="width: 70%; margin: 20px auto; padding: 20px; border: 1px solid #b3d9b3; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <h3 style="text-align: center; color: #004d00;">Наші продукти</h3>
-        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background-color: #e0f2e9; color: #004d00;">
-                    <th style="padding: 10px; border: 1px solid #b3d9b3;">Марка</th>
-                    <th style="padding: 10px; border: 1px solid #b3d9b3;">Виробник</th>
-                    <th style="padding: 10px; border: 1px solid #b3d9b3;">Термін придатності</th>
-                    <th style="padding: 10px; border: 1px solid #b3d9b3;">Постачальник</th>
-                    <th style="padding: 10px; border: 1px solid #b3d9b3;">Ціна</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">Ліки A</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">Виробник A</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">2025-12-31</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">Постачальник A</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">100 грн</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">Ліки B</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">Виробник B</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">2024-08-15</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">Постачальник B</td>
-                    <td style="padding: 10px; border: 1px solid #b3d9b3;">200 грн</td>
-                </tr>
-            </tbody>
-        </table>
+
+    <!-- Привітальний текст -->
+    <div class="container">
+        <h2>Раді вітати Вас на нашому сайті! <br> Будь-яка забаганка - за ваші гроші!</h2>
     </div>
-    
-    <hr style="width: 100%; height: 5px; background-color: #006400; margin: 20px auto; border: none;">
-    
-    <div style="width: 70%; margin: 20px auto; padding: 20px; border: 1px solid #b3d9b3; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center;">
-        <h2 style="font-style: italic;" title="Останні новини">
-            <span style="display: inline-block; transition: transform 0.3s ease;" 
-                  onmouseover="this.style.transform='translateY(-5px)';" 
-                  onmouseout="this.style.transform='translateY(0)';">
-                Останні новини та оновлення від нашої аптеки.
-            </span>
-        </h2>
-        
-        <p style="color: grey; font-size: smaller;">
-            Тут ви знайдете інформацію про останні новини та оновлення. Ми завжди намагаємося бути в курсі подій, щоб забезпечити вас найактуальнішими даними.
+
+    <hr>
+
+    <!-- Про компанію -->
+    <div class="about">
+        <h2>Про компанію</h2>
+        <p>
+            Аптека "Забаганка" — це сучасний онлайн-сервіс для придбання ліків, що поєднує високу якість продукції та зручний сервіс.
+            Ми прагнемо забезпечити наших клієнтів необхідними медикаментами, щоб підтримувати ваше здоров'я та комфорт.
         </p>
-        
-        <small style="color: #003d00;">Всі права захищені &copy; 2024</small>
-        
+        <h3>Чому обирають нас?</h3>
+        <p>
+            - Широкий асортимент: ми пропонуємо тільки сертифіковані товари від надійних виробників.<br>
+            - Доступні ціни: у нас завжди діють вигідні пропозиції та акції.<br>
+            - Зручна доставка: швидка доставка по всій Україні.<br>
+        </p>
+    </div>
+
+    <hr>
+
+    <!-- Таблиця ліків -->
+    <div class="container">
+        <h2>Наші ліки:</h2>
     </div>
     
-    <!-- Social Media Section -->
-    <div style="width: 70%; margin: 20px auto; padding: 20px; text-align: center;">
-        <p><big>Слідкуйте за нами в соцмережах:</big></p>
-        <a href="https://www.instagram.com" target="_blank" style="text-decoration: none; display: inline-block; margin-right: 15px; color: #E1306C; transition: transform 0.3s ease;" 
-           onmouseover="this.style.transform='translateY(-5px)';" 
-           onmouseout="this.style.transform='translateY(0)';">
-            <i style="font-size: 36px;">Instagram</i>
-        </a>
-        <a href="https://www.facebook.com" target="_blank" style="text-decoration: none; display: inline-block; margin-right: 15px; color: #1877F2; transition: transform 0.3s ease;" 
-           onmouseover="this.style.transform='translateY(-5px)';" 
-           onmouseout="this.style.transform='translateY(0)';">
-            <i style="font-size: 36px;">Facebook</i>
-        </a>
-        <a href="https://www.youtube.com" target="_blank" style="text-decoration: none; display: inline-block; margin-right: 15px; color: #FF0000; transition: transform 0.3s ease;" 
-           onmouseover="this.style.transform='translateY(-5px)';" 
-           onmouseout="this.style.transform='translateY(0)';">
-            <i style="font-size: 36px;">YouTube</i>
-        </a>
-        <a href="https://www.tiktok.com" target="_blank" style="text-decoration: none; display: inline-block; margin-right: 15px; color: #000000; transition: transform 0.3s ease;" 
-           onmouseover="this.style.transform='translateY(-5px)';" 
-           onmouseout="this.style.transform='translateY(0)';">
-            <i style="font-size: 36px;">TikTok</i>
-        </a>
+    <table>
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Виробник</th>
+                <th>Ціна</th>
+                <th>Наявність</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Цитрамон-Дарниця</td>
+                <td>Дарниця</td>
+                <td>125 грн</td>
+                <td>Є в наявності</td>
+            </tr>
+            <tr>
+                <td>Но-шпа</td>
+                <td>Санофі</td>
+                <td>80 грн</td>
+                <td>Є в наявності</td>
+            </tr>
+            <tr>
+                <td>Парацетамол</td>
+                <td>Фармак</td>
+                <td>45 грн</td>
+                <td>Є в наявності</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div class="header">
+        <h4>Найкращі ліки з усього світу!</h4>
+        <h4>Ваше здоров'я - наша турбота</h4>
     </div>
 </body>
 </html>
